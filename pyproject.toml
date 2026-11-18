@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "openpcsd"
+version = "0.1.0"
+description = "Clean-room reader/writer for PicSay .pcsd photo-editor documents"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+keywords = ["pcsd", "PicSay", "photo-editor", "file-format", "interoperability"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Multimedia :: Graphics",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = []  # stdlib only, by design
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[project.urls]
+Documentation = "https://github.com/Tamalb657/openpcsd/blob/main/docs/FORMAT.md"
+
+[project.scripts]
+pcsd = "openpcsd.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
